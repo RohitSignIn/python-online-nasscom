@@ -94,8 +94,33 @@
 
 
 # 10. Table
+# num = 5
 
-num = 5
+# for i in range(1, 11):
+#     print(num, "*", i, "=", num*i)
 
-for i in range(1, 11):
-    print(num, "*", i, "=", num*i)
+
+# 9. Display second Even without skipping the rest Odd
+
+# list1 = [2,3,4,5,6,2,4,5]
+
+# evenCount = 0
+
+# for i in list1:
+#     if(i % 2 == 0):
+#         evenCount += 1
+#     else:
+#         print(i)
+
+#     if(evenCount == 2):
+#         print(i)
+#         evenCount += 1
+
+
+# def name(name, greetings):
+#     print(greetings, "My name is", name)
+    
+
+# name("Mohit", "Hello")
+
+
