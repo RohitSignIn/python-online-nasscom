@@ -27,13 +27,5 @@
 # print(sum(2, 5))
 
 
-def fibonacci(num):
-    if(num == 0 or num == 1):
-        return num
-    
-    num = fibonacci(num-1)+fibonacci(num-2)
-    print(num, "=>", end="")
-    return num
 
-fibonacci(6)
 
