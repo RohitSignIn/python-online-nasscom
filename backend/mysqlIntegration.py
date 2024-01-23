@@ -10,13 +10,10 @@ config = {
 
 conObj = mysql.connector.connect(**config)
 
-print(conObj)
-
 myCursor = conObj.cursor()
 
-
 myCursor.execute("""
-create table user if not exists (
+create table if not exists user ( 
 	id int auto_increment primary key,
     username text,
     password text
@@ -24,7 +21,7 @@ create table user if not exists (
 """)
 
 myCursor.execute("""
-create table todo if not exists (
+create table if not exists todo (
 	id int auto_increment primary key,
     task text,
     status text,
@@ -33,16 +30,16 @@ create table todo if not exists (
 )
 """)
 
-query = """
-INSERT INTO todo 
-(task, status, userId) 
-VALUES(%s, %s, %s)
-"""
+# query = """
+# INSERT INTO todo 
+# (task, status, userId) 
+# VALUES(%s, %s, %s)
+# """
 
-values = ("go to Gym", "pending", 2)
-myCursor.execute(query, values)
+# values = ("go to Gym", "pending", 2)
+# myCursor.execute(query, values)
 
-conObj.commit()
+# conObj.commit()
 
 
 myCursor.execute("select * from todo")

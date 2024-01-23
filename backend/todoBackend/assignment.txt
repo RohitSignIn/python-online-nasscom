@@ -1,0 +1,17 @@
+Todos:
+ADD todo
+Update todo
+Delete todo
+
+Fetch Todo by todoId
+Fetch Todos by userId
+Fetch All
+
+Users: 
+ADD user
+Update user
+Delete user
+
+Fetch Todo by userId
+Fetch All
+
