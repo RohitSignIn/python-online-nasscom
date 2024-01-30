@@ -124,3 +124,48 @@
 # name("Mohit", "Hello")
 
 
+
+
+# LIST - Mutable
+# a = [1,"hello",4,5,True,7,8]
+# a[0] = 8
+# print(type(a))
+
+# # Tuple - Immutable
+# b = (1,"hello",4,5,True,7,8)
+# print(type(b))
+
+
+# Dictionary
+# a = [0,0,"Hello",1,1,2,"Hello",2]
+
+# dict = {}
+# for i in a:
+#     if i in dict:
+#         dict[i] += 1
+#     else:
+#         dict[i] = 1
+
+# print(dict)
+
+# Sets
+# thisset = ({"apple", "banana", "cherry"})
+
+# print(thisset)
+
+
+# Anonympous Function
+sum = lambda a, b: a + b
+
+
+print(sum(2, 3))
+
+
+
+
+
+
+
+
+
+

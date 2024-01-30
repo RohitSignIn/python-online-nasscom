@@ -1,5 +1,5 @@
 Todos:
-ADD todo
+ADD todo POST
 Update todo
 Delete todo
 
@@ -8,10 +8,11 @@ Fetch Todos by userId
 Fetch All
 
 Users: 
-ADD user
+Add User
 Update user
 Delete user
 
-Fetch Todo by userId
 Fetch All
+Fetch User by userId
+
 
