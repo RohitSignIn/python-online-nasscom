@@ -4,10 +4,12 @@ from simple_http_server import PathValue
 
 import main
 # USER APIs --START-- 
+
 # Create USER Route 
-@request_map("/api/v1/user", method="POST")
-def index(username, password):
-    return {"res": f"user={username}&password={password}"}
+@request_map("/api/v1/users", method="GET")
+def index():
+    res = main.getUsers()
+    return {"res": res}
 
 
 # Update USER Route 
@@ -21,8 +23,8 @@ def index(userId):
     return {"res": f"Delete user UserId={userId}"}
 
 # Fetch All users
-@request_map("/api/v1/users", method="GET")
-def index():
+@request_map("/api/v1/user", method="POST")
+def index(username, password):
     return {"res": f"Fetch All user called"}
 
 # Fetch user by userId

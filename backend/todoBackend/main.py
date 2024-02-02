@@ -37,4 +37,11 @@ def addUser(username, password):
     """)
     conObj.commit()
 
-    return True
+
+def getUsers():
+    cursor.execute("""
+    SELECT * FROM user
+    """)
+
+    res = cursor.fetchall()
+    return res 
