@@ -15,7 +15,7 @@ def index():
 @request_map("/api/v1/user/{id}", method="GET")
 def index(id = PathValue()):
     res = main.getUserById(id)
-    return 200, Headers({"access-co ntrol-allow-origin": "*"}), {"res": res}
+    return 200, Headers({"access-control-allow-origin": "*"}), {"res": res}
 
 
 # Create User
@@ -57,11 +57,32 @@ def index(userId):
 @request_map("/api/v1/todos", method="GET")
 def index():
     res = main.getTodos()
-    return {"res": res}
+    return 200, Headers({"access-control-allow-origin": "*"}), {"res": res}
+
+# Get Todo By id
+@request_map("/api/v1/todo/{id}", method="GET")
+def index(id = PathValue()):
+    res = main.getTodoById(id)
+    return 200, Headers({"access-control-allow-origin": "*"}), {"res": res}
+
+# Create Todo
+@request_map("/api/v1/todo", method="POST")
+def index(task, userId):
+    main.createTodo(task, userId)
+    return 201, Headers({"access-control-allow-origin": "*"}), {"success": "true"}
+
+# Update Todo
+@request_map("/api/v1/todo", method="PUT")
+def index(update, to, todoId):
+    main.updateTodo(update, to, todoId)
+    return 201, Headers({"access-control-allow-origin": "*"}), {"success": "true"}
+
+# DELETE Todo
+@request_map("/api/v1/todo", method="DELETE")
+def index(todoId):
+    main.deleteTodo(todoId)
+    return 201, Headers({"access-control-allow-origin": "*"}), {"success": "true"}
 
 # TODO APIs --ENDS-- 
-
-
-
 
 server.start(port=9090)

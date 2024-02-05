@@ -95,3 +95,27 @@ def getTodoById(id):
 
     res = cursor.fetchone()
     return res
+
+def createTodo(task, userId):
+    cursor.execute(f"""
+    INSERT INTO todo
+    (task, status, userId)
+    VALUES('{task}', 'pending', '{userId}')
+    """)
+    conObj.commit()
+
+
+def updateTodo(update, to, todoId):
+    cursor.execute(f"""
+    UPDATE todo SET {update} = '{to}'
+    WHERE id = {todoId}
+    """)
+    conObj.commit()
+
+
+def deleteTodo(todoId):
+    cursor.execute(f"""
+    DELETE FROM todo 
+    WHERE id = {todoId}
+    """)
+    conObj.commit()
