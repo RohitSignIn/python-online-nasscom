@@ -30,6 +30,27 @@ cursor.execute("""
                )
                """)
 
+
+# USER QUERIES STARTED
+def getUsers():
+    cursor.execute("""
+    SELECT * FROM user
+    """)
+
+    res = cursor.fetchall()
+
+    print(res)
+    return res 
+
+def getUserById(id):
+    cursor.execute(f"""
+    SELECT * FROM user
+    where id = {id}
+    """)
+
+    res = cursor.fetchone()
+    return res
+
 def addUser(username, password):
     cursor.execute(f"""
         INSERT INTO user (username, password)
@@ -37,11 +58,40 @@ def addUser(username, password):
     """)
     conObj.commit()
 
+def userUpdate(update, to, userId):
+    cursor.execute(f"""
+        UPDATE user SET {update} = '{to}'
+        WHERE id = '{userId}'
+    """)
+    conObj.commit()
 
-def getUsers():
-    cursor.execute("""
-    SELECT * FROM user
+def userDelete(userId):
+    cursor.execute(f"""
+    DELETE FROM user
+    WHERE id = {userId}
+    """)
+    conObj.commit()
+# USER QUERIES STARTED
+
+
+
+# TODOS QUERIES STARTED
+    
+# Get All Todos
+def getTodos():
+    cursor.execute(f"""
+    SELECT * FROM todo
+    """)
+    
+    res = cursor.fetchall()
+    return res
+
+
+def getTodoById(id):
+    cursor.execute(f"""
+    SELECT * FROM todo
+    WHERE id = {id}
     """)
 
-    res = cursor.fetchall()
-    return res 
+    res = cursor.fetchone()
+    return res
