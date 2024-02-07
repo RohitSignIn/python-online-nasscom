@@ -1,1 +1,1 @@
-="#2d2d2d
+grid_columnconfigure
