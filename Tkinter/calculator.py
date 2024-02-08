@@ -20,26 +20,25 @@ def handleOperationClick(btn):
     label1 = Label(frame1, text="", font=("helvetica", 48), background="red", foreground="#fff")
     label1.grid(row=0, column=0, sticky="ewns")    
 
+
+# FirstNumber Not getting updated State
 def getResult():
     global firstNumber
     global number
     global operation
 
-    result = None
-
-    firstNumber = float(firstNumber)
-    number = float(number)
 
     if(operation == "add"):
-        result = firstNumber + number
+        firstNumber = int(firstNumber) + int(number)
     if(operation == "sub"):
-        result = firstNumber - number
+        firstNumber = int(firstNumber) - int(number)
     if(operation == "mul"):
-        result = firstNumber * number
+        firstNumber = int(firstNumber) * int(number)
     if(operation == "div"):
-        result = firstNumber / number
+        firstNumber = int(firstNumber) / int(number)
 
-    label1 = Label(frame1, text=result, font=("helvetica", 48), background="red", foreground="#fff")
+
+    label1 = Label(frame1, text=firstNumber, font=("helvetica", 48), background="red", foreground="#fff")
     label1.grid(row=0, column=0, sticky="ewns")  
 
 
