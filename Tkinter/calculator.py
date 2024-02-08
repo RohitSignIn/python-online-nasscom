@@ -1,14 +1,64 @@
 firstNumber = ""
+operation = ""
+number = ""
 
 def handleNumberClick(btn):
-    global firstNumber
-    firstNumber = firstNumber + str(btn)
+    global number
+    number = number + str(btn)
 
-    label1 = Label(frame1, text=firstNumber, font=("helvetica", 48), background="red", foreground="#fff")
+    label1 = Label(frame1, text=number, font=("helvetica", 48), background="red", foreground="#fff")
     label1.grid(row=0, column=0, sticky="ewns")    
 
 def handleOperationClick(btn):
-    print(btn)
+    global firstNumber
+    global number
+    global operation
+
+    operation = btn
+    firstNumber = number
+    number = ""
+    label1 = Label(frame1, text="", font=("helvetica", 48), background="red", foreground="#fff")
+    label1.grid(row=0, column=0, sticky="ewns")    
+
+def getResult():
+    global firstNumber
+    global number
+    global operation
+
+    result = None
+
+    firstNumber = float(firstNumber)
+    number = float(number)
+
+    if(operation == "add"):
+        result = firstNumber + number
+    if(operation == "sub"):
+        result = firstNumber - number
+    if(operation == "mul"):
+        result = firstNumber * number
+    if(operation == "div"):
+        result = firstNumber / number
+
+    label1 = Label(frame1, text=result, font=("helvetica", 48), background="red", foreground="#fff")
+    label1.grid(row=0, column=0, sticky="ewns")  
+
+
+
+def clearScreen():
+    global firstNumber
+    global operation
+    global number
+
+    firstNumber = ""
+    operation = ""
+    number = ""
+
+    label1 = Label(frame1, text="", font=("helvetica", 48), background="red", foreground="#fff")
+    label1.grid(row=0, column=0, sticky="ewns") 
+
+
+
+
 
 
 from tkinter import *
@@ -62,8 +112,8 @@ add = Button(frame2, text="+", font=("helvetica", 28), foreground="blue", comman
 sub = Button(frame2, text="-", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("sub"))
 mul = Button(frame2, text="*", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("mul"))
 div = Button(frame2, text="/", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("div"))
-clr = Button(frame2, text="C", font=("helvetica", 28), foreground="red", command=lambda: handleOperationClick("clr"))
-run = Button(frame2, text="=", font=("helvetica", 28), foreground="green", command=lambda: handleOperationClick("run"))
+clr = Button(frame2, text="C", font=("helvetica", 28), foreground="red", command=clearScreen)
+run = Button(frame2, text="=", font=("helvetica", 28), foreground="green", command= getResult)
 
 btn7.grid(row=0, column=0, sticky="ewns")
 btn8.grid(row=0, column=1, sticky="ewns")
