@@ -1,4 +1,13 @@
+firstNumber = ""
+
 def handleNumberClick(btn):
+    global firstNumber
+    firstNumber = firstNumber + str(btn)
+
+    label1 = Label(frame1, text=firstNumber, font=("helvetica", 48), background="red", foreground="#fff")
+    label1.grid(row=0, column=0, sticky="ewns")    
+
+def handleOperationClick(btn):
     print(btn)
 
 
@@ -19,7 +28,7 @@ frame1.columnconfigure(0, weight=1)
 frame1.rowconfigure(0, weight=1)
 
 
-label1 = Label(frame1, text="123456789", font=("helvetica", 48), background="red", foreground="#fff")
+label1 = Label(frame1, text="", font=("helvetica", 48), background="red", foreground="#fff")
 label1.grid(row=0, column=0, sticky="ewns")
 
 frame2 = Frame(root)
@@ -49,12 +58,12 @@ btn3 = Button(frame2, text="3", font=("helvetica", 28), command= lambda: handleN
 btn0 = Button(frame2, text="0", font=("helvetica", 28), command= lambda: handleNumberClick(0))
 
 # Operations
-add = Button(frame2, text="+", font=("helvetica", 28), foreground="blue")
-sub = Button(frame2, text="-", font=("helvetica", 28), foreground="blue")
-mul = Button(frame2, text="*", font=("helvetica", 28), foreground="blue")
-div = Button(frame2, text="/", font=("helvetica", 28), foreground="blue")
-clr = Button(frame2, text="C", font=("helvetica", 28), foreground="red")
-run = Button(frame2, text="=", font=("helvetica", 28), foreground="green")
+add = Button(frame2, text="+", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("add"))
+sub = Button(frame2, text="-", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("sub"))
+mul = Button(frame2, text="*", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("mul"))
+div = Button(frame2, text="/", font=("helvetica", 28), foreground="blue", command=lambda: handleOperationClick("div"))
+clr = Button(frame2, text="C", font=("helvetica", 28), foreground="red", command=lambda: handleOperationClick("clr"))
+run = Button(frame2, text="=", font=("helvetica", 28), foreground="green", command=lambda: handleOperationClick("run"))
 
 btn7.grid(row=0, column=0, sticky="ewns")
 btn8.grid(row=0, column=1, sticky="ewns")

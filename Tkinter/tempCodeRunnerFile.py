@@ -1,1 +1,1 @@
-grid_columnconfigure
+handleOperationClick
