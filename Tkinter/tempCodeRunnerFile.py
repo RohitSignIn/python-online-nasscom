@@ -1,1 +1,3 @@
-int
+operation = "sub"
+# number = ""
+# fitstNumber = ""

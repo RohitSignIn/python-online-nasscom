@@ -29,16 +29,17 @@ def getResult():
 
 
     if(operation == "add"):
-        firstNumber = int(firstNumber) + int(number)
+        number = float(firstNumber) + float(number)
     if(operation == "sub"):
-        firstNumber = int(firstNumber) - int(number)
+        number = float(firstNumber) - float(number)
     if(operation == "mul"):
-        firstNumber = int(firstNumber) * int(number)
+        number = float(firstNumber) * float(number)
     if(operation == "div"):
-        firstNumber = int(firstNumber) / int(number)
+        number = float(firstNumber) / float(number)
 
+    number = f"{number}"
 
-    label1 = Label(frame1, text=firstNumber, font=("helvetica", 48), background="red", foreground="#fff")
+    label1 = Label(frame1, text=number, font=("helvetica", 48), background="red", foreground="#fff")
     label1.grid(row=0, column=0, sticky="ewns")  
 
 
