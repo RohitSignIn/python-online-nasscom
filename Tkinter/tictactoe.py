@@ -1,3 +1,27 @@
+playerTurn = "x"
+
+def handleBtnClick(btn):
+    global playerTurn
+
+    resRow = 0
+    resColumn = btn-1
+
+    if(btn >= 4 and btn <= 6):
+        resRow=1
+        resColumn = btn-4
+    elif(btn > 6):
+        resRow=2
+        resColumn = btn-7
+
+    btn = Button(layout, text=playerTurn, width=10, height=6)
+    btn.grid(row=resRow, column=resColumn, padx=5, pady=5)
+
+    if(playerTurn == "x"):
+        playerTurn = "o"
+    else: 
+        playerTurn = "x"
+
+
 from tkinter import *
 root = Tk()
 
@@ -16,15 +40,15 @@ mainFrame.rowconfigure(0, weight=1)
 layout = Frame(mainFrame, background="#2d2d2d")
 layout.grid(row=0, column=0)
 
-btn1 = Button(layout, text="", width=10, height=6)
-btn2 = Button(layout, text="", width=10, height=6)
-btn3 = Button(layout, text="", width=10, height=6)
-btn4 = Button(layout, text="", width=10, height=6)
-btn5 = Button(layout, text="", width=10, height=6)
-btn6 = Button(layout, text="", width=10, height=6)
-btn7 = Button(layout, text="", width=10, height=6)
-btn8 = Button(layout, text="", width=10, height=6)
-btn9 = Button(layout, text="", width=10, height=6)
+btn1 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(1))
+btn2 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(2))
+btn3 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(3))
+btn4 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(4))
+btn5 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(5))
+btn6 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(6))
+btn7 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(7))
+btn8 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(8))
+btn9 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(9))
 
 
 btn1.grid(row=0, column=0, padx=5, pady=5)
