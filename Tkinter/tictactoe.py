@@ -1,10 +1,17 @@
 playerTurn = "x"
+movesDone = {}
 
 def handleBtnClick(btn):
     global playerTurn
 
     resRow = 0
     resColumn = btn-1
+
+    # Updating Moves Done Dictionary
+    if(not(resColumn in movesDone)):
+        movesDone[resColumn] = playerTurn
+
+    print(movesDone)
 
     if(btn >= 4 and btn <= 6):
         resRow=1
@@ -16,10 +23,49 @@ def handleBtnClick(btn):
     btn = Button(layout, text=playerTurn, width=10, height=6)
     btn.grid(row=resRow, column=resColumn, padx=5, pady=5)
 
+    isWinner(playerTurn)
+
     if(playerTurn == "x"):
         playerTurn = "o"
     else: 
         playerTurn = "x"
+
+
+def isWinner(player):
+    gotWinner = False
+    possibleWinningPermutation = [
+        # For Rows
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        # For Columns 
+        [0,3,6],
+        [1,4,7],
+        [6,7,8],
+        # For Diagonals
+        [0,4,8],
+        [6,4,6]
+    ]
+
+    for i in possibleWinningPermutation:
+        gotWinner = True
+        for j in i: 
+            if(j in movesDone):
+                if(movesDone[j] != player):
+                    gotWinner = False
+                    break
+            else:
+                gotWinner = False
+                break
+        
+        if(gotWinner):
+            break
+
+    if(gotWinner):
+        print(player, "Win")
+        
+
+            
 
 
 from tkinter import *
