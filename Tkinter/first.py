@@ -1,22 +1,14 @@
 from tkinter import *
+import tkinter.messagebox 
+
 root = Tk()
 
-def handleSubmit():
-    print("Submit Button is Clicked")
+# tkinter.messagebox.showinfo("Welcome to GFG", "East Button clicked")
 
-root.columnconfigure(0, weight=1)
-root.columnconfigure(1, weight=1)
+# tkinter.messagebox.showwarning(title="Warning", message="I am Warning Box")
 
-root.rowconfigure(0, weight=1)
-root.rowconfigure(1, weight=1)
+res = tkinter.messagebox.askyesno(title="Yes Or No", message="Do you want to continue")
 
-label1 = Label(root, text="Username", background="#2d2d2d", foreground="#fff", font=("helvetica", 28))
-label1.grid(row=0, column=0, sticky="ewns")
-
-entry1 = Entry(root, font=("helvetica", 38))
-entry1.grid(row=0, column=1, sticky="ewns")
-
-btn = Button(root, text="Submit", command=handleSubmit)
-btn.grid(row=1, column=0, sticky="ewns")
+print(res)
 
 root.mainloop()

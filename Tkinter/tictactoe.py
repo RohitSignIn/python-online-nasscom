@@ -8,8 +8,7 @@ def handleBtnClick(btn):
     resColumn = btn-1
 
     # Updating Moves Done Dictionary
-    if(not(resColumn in movesDone)):
-        movesDone[resColumn] = playerTurn
+    movesDone[resColumn] = playerTurn
 
     print(movesDone)
 
@@ -41,7 +40,7 @@ def isWinner(player):
         # For Columns 
         [0,3,6],
         [1,4,7],
-        [6,7,8],
+        [2,5,8],
         # For Diagonals
         [0,4,8],
         [6,4,6]
@@ -64,9 +63,6 @@ def isWinner(player):
     if(gotWinner):
         print(player, "Win")
         
-
-            
-
 
 from tkinter import *
 root = Tk()
