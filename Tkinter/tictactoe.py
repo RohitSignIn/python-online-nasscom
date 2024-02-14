@@ -1,3 +1,29 @@
+from tkinter import *
+from tkinter import messagebox
+
+def btnGUI():
+    btn1 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(1))
+    btn2 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(2))
+    btn3 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(3))
+    btn4 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(4))
+    btn5 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(5))
+    btn6 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(6))
+    btn7 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(7))
+    btn8 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(8))
+    btn9 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(9))
+
+
+    btn1.grid(row=0, column=0, padx=5, pady=5)
+    btn2.grid(row=0, column=1, padx=5, pady=5)
+    btn3.grid(row=0, column=2, padx=5, pady=5)
+    btn4.grid(row=1, column=0, padx=5, pady=5)
+    btn5.grid(row=1, column=1, padx=5, pady=5)
+    btn6.grid(row=1, column=2, padx=5, pady=5)
+    btn7.grid(row=2, column=0, padx=5, pady=5)
+    btn8.grid(row=2, column=1, padx=5, pady=5)
+    btn9.grid(row=2, column=2, padx=5, pady=5)
+
+
 playerTurn = "x"
 movesDone = {}
 
@@ -31,6 +57,8 @@ def handleBtnClick(btn):
 
 
 def isWinner(player):
+    global playerTurn
+    global movesDone
     gotWinner = False
     possibleWinningPermutation = [
         # For Rows
@@ -61,10 +89,28 @@ def isWinner(player):
             break
 
     if(gotWinner):
-        print(player, "Win")
+        msgStr = f"{player} wins, Start New Game"
+
+        # POP UP MESSAGE 
+        res = messagebox.askyesno(title="Start New Game", message=msgStr)
+        if(res):
+            playerTurn = player
+            movesDone = {}
+            btnGUI()
+
+    if(len(movesDone) == 9):
+        msgStr = f"Match Draw, Start New Game"
+
+        # POP UP MESSAGE 
+        res = messagebox.askyesno(title="Start New Game", message=msgStr)
+        if(res):
+            playerTurn = player
+            movesDone = {}
+            btnGUI()
+
+
         
 
-from tkinter import *
 root = Tk()
 
 root.geometry("800x600")
@@ -82,26 +128,7 @@ mainFrame.rowconfigure(0, weight=1)
 layout = Frame(mainFrame, background="#2d2d2d")
 layout.grid(row=0, column=0)
 
-btn1 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(1))
-btn2 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(2))
-btn3 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(3))
-btn4 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(4))
-btn5 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(5))
-btn6 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(6))
-btn7 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(7))
-btn8 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(8))
-btn9 = Button(layout, text="", width=10, height=6, command=lambda: handleBtnClick(9))
 
-
-btn1.grid(row=0, column=0, padx=5, pady=5)
-btn2.grid(row=0, column=1, padx=5, pady=5)
-btn3.grid(row=0, column=2, padx=5, pady=5)
-btn4.grid(row=1, column=0, padx=5, pady=5)
-btn5.grid(row=1, column=1, padx=5, pady=5)
-btn6.grid(row=1, column=2, padx=5, pady=5)
-btn7.grid(row=2, column=0, padx=5, pady=5)
-btn8.grid(row=2, column=1, padx=5, pady=5)
-btn9.grid(row=2, column=2, padx=5, pady=5)
-
+btnGUI()
 
 root.mainloop()
