@@ -1,70 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
+
 <body>
-    <div class="container">
+    <header>
 
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Enter Task</label>
-        </div>
+        <nav>
 
-        <button type="button" class="btn btn-primary">Add Todo</button>
+        </nav>
 
-        <h1>All Users</h1>
-        <hr>
-        <div id="user_con">
-        </div>
-
-    </div>
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
+    </header>
 
 
-        $.ajax({
-            type: "get",
-            url: "http://localhost:9090/api/v1/users",
-            success: function (response) {
-                console.log(response)
-                response.res.forEach((val) => {
-                    $("#user_con").append(`<h2>${val[1]}</h2>`)
-                });
-            }
-        });
+    <!-- Heading h1-h6 -->
+    <h1>Rohit Singh</h1>
+
+    <img width="400" height="400" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f"
+        alt="Profile Image">
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam impedit provident, quas enim, omnis autem
+        dolores, delectus repellat inventore deleniti fugit vero recusandae aliquid veritatis consectetur eos natus
+        ipsum rerum.
+        Totam eligendi</p>
+
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <h3>Ecommerce Website</h3>
+        </li>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae nobis asperiores ipsum ducimus praesentium
+            eum amet explicabo, exercitationem dolorum error ipsam? Enim, facilis omnis? Reiciendis mollitia praesentium
+            enim sint.</p>
+        <li>
+            <h3>CRM Application</h3>
+        </li>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae nobis asperiores ipsum ducimus praesentium
+            eum amet explicabo, exercitationem dolorum error ipsam? Enim, facilis omnis? Reiciendis mollitia praesentium
+            enim sint.</p>
+        <li>
+            <h3>Chat App</h3>
+        </li>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae nobis asperiores ipsum ducimus praesentium
+            eum amet explicabo, exercitationem dolorum error ipsam? Enim, facilis omnis? Reiciendis mollitia praesentium
+            enim sint.</p>
+
+        <li>
+            <h3>Todo Backend</h3>
+        </li>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae nobis asperiores ipsum ducimus praesentium
+            eum amet explicabo, exercitationem dolorum error ipsam? Enim, facilis omnis? Reiciendis mollitia praesentium
+            enim sint.</p>
+    </ul>
 
 
+    <h2>Education and Courses</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    SR.No
+                </th>
+                <th>
+                    Course Name
+                </th>
+                <th>
+                    CGPA
+                </th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    ADHN
+                </td>
+                <td>
+                    8.9
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    Digital Marketing
+                </td>
+                <td>
+                    8.9
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    React JS
+                </td>
+                <td>
+                    8.9
+                </td>
+            </tr>
 
-        $.ajax({
-            type: "post",
-            url: "http://localhost:9090/api/v1/users",
-            data: "data",
-            dataType: "dataType",
-            success: function (response) {
+        </tbody>
+    </table>
 
-            }
-        });
+    <h2>Achievements</h2>
+    <ul>
+        <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio molestiae
+        </li>
+        <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio molestiae
+        </li>
+    </ul>
 
-    </script>
+    <h2>Hobbies</h2>
+    <ul>
+        <li>
+            Badminton
+        </li>
+        <li>
+            Chess
+        </li>
+    </ul>
+
+
+    <footer>
+        <p><b><i>Contact:</i></b> rohitsinghsignin@gmail.com</p>
+    </footer>
 
 </body>
+
+
 
 </html>
