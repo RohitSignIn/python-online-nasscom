@@ -31,37 +31,10 @@
 
         <div class="container mt-4">
 
-
             <div class="d-flex gap-2 ">
                 <p class="flex-grow-1 border p-2">Task</p>
                 <div class="">
-                    <button class="btn btn-warning">Completed</button>
-                    <button class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-
-            <div class="d-flex gap-2 ">
-                <p class="flex-grow-1 border p-2">Task</p>
-                <div class="">
-                    <button class="btn btn-warning">Completed</button>
-                    <button class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-
-
-            <div class="d-flex gap-2 ">
-                <p class="flex-grow-1 border p-2">Task</p>
-                <div class="">
-                    <button class="btn btn-warning">Completed</button>
-                    <button class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-
-
-            <div class="d-flex gap-2 ">
-                <p class="flex-grow-1 border p-2">Task</p>
-                <div class="">
-                    <button class="btn btn-warning">Completed</button>
+                    <button class="btn btn-warning" id="persona">Completed</button>
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
@@ -72,6 +45,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+    <script>
+
+
+        document.getElementById("persona").addEventListener("click", (btn) => {
+            if (btn.target.textContent == "Completed") {
+                btn.target.textContent = "pending"
+            } else {
+                btn.target.textContent = "Completed"
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>
