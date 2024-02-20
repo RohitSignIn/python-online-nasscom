@@ -25,11 +25,11 @@
 
         <div class="input-group mb-3 mt-4">
             <input type="text" class="form-control" placeholder="Enter Todo" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-            <button class="btn btn-success" type="button" id="button-addon2">Add Todo</button>
+                aria-describedby="button-addon2" , id="todoInput">
+            <button class="btn btn-success" type="button" id="addTodo">Add Todo</button>
         </div>
 
-        <div class="container mt-4">
+        <div class="container mt-4" id="todoCon">
 
             <div class="d-flex gap-2 ">
                 <p class="flex-grow-1 border p-2">Task</p>
@@ -38,6 +38,9 @@
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
+
+
+            <!-- <p>nnnnn</p> -->
 
         </div>
     </div>
@@ -48,14 +51,53 @@
 
     <script>
 
+        let status = document.getElementById("persona")
 
-        document.getElementById("persona").addEventListener("click", (btn) => {
-            if (btn.target.textContent == "Completed") {
-                btn.target.textContent = "pending"
-            } else {
-                btn.target.textContent = "Completed"
-            }
-        });
+
+        let addTodo = document.getElementById("addTodo")
+        let todoInput = document.getElementById("todoInput")
+        let todoCon = document.getElementById("todoCon")
+
+
+        addTodo.addEventListener("click", () => {
+
+
+            todo = document.createElement("div")
+            todoPara = document.createElement("p")
+            btnCon = document.createElement("div")
+            statusBtn = document.createElement("button")
+            deleteBtn = document.createElement("button")
+
+            todo.classList.add("d-flex")
+            todo.classList.add("gap-2")
+            todoPara.classList.add("flex-grow-1")
+            todoPara.classList.add("border")
+            todoPara.classList.add("p-2")
+
+
+            todoPara.textContent = todoInput.value
+
+            statusBtn.classList.add("btn")
+            statusBtn.classList.add("btn-warning")
+            statusBtn.textContent = "Completed"
+
+            deleteBtn.classList.add("btn")
+            deleteBtn.classList.add("btn-danger")
+            deleteBtn.textContent = "Delete"
+
+
+            btnCon.appendChild(statusBtn)
+            btnCon.appendChild(deleteBtn)
+
+
+            todo.appendChild(todoPara)
+            todo.appendChild(btnCon)
+
+
+            todoCon.appendChild(todo)
+        })
+
+
 
     </script>
 
