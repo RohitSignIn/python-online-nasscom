@@ -31,17 +31,6 @@
 
         <div class="container mt-4" id="todoCon">
 
-            <div class="d-flex gap-2 ">
-                <p class="flex-grow-1 border p-2">Task</p>
-                <div class="">
-                    <button class="btn btn-warning" id="persona">Completed</button>
-                    <button class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-
-
-            <!-- <p>nnnnn</p> -->
-
         </div>
     </div>
 
@@ -49,7 +38,18 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <script>
+
+
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:9090/api/v1/todos",
+            success: function (response) {
+                console.log(response["res"])
+            }
+        });
 
         let status = document.getElementById("persona")
 
@@ -82,6 +82,7 @@
             statusBtn.textContent = "Completed"
 
             deleteBtn.classList.add("btn")
+            deleteBtn.classList.add("ms-2")
             deleteBtn.classList.add("btn-danger")
             deleteBtn.textContent = "Delete"
 
