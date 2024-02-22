@@ -40,67 +40,8 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <script>
+    <script src="./script/main.js"></script>
 
-
-        $.ajax({
-            type: "GET",
-            url: "http://localhost:9090/api/v1/todos",
-            success: function (response) {
-                console.log(response["res"])
-            }
-        });
-
-        let status = document.getElementById("persona")
-
-
-        let addTodo = document.getElementById("addTodo")
-        let todoInput = document.getElementById("todoInput")
-        let todoCon = document.getElementById("todoCon")
-
-
-        addTodo.addEventListener("click", () => {
-
-
-            todo = document.createElement("div")
-            todoPara = document.createElement("p")
-            btnCon = document.createElement("div")
-            statusBtn = document.createElement("button")
-            deleteBtn = document.createElement("button")
-
-            todo.classList.add("d-flex")
-            todo.classList.add("gap-2")
-            todoPara.classList.add("flex-grow-1")
-            todoPara.classList.add("border")
-            todoPara.classList.add("p-2")
-
-
-            todoPara.textContent = todoInput.value
-
-            statusBtn.classList.add("btn")
-            statusBtn.classList.add("btn-warning")
-            statusBtn.textContent = "Completed"
-
-            deleteBtn.classList.add("btn")
-            deleteBtn.classList.add("ms-2")
-            deleteBtn.classList.add("btn-danger")
-            deleteBtn.textContent = "Delete"
-
-
-            btnCon.appendChild(statusBtn)
-            btnCon.appendChild(deleteBtn)
-
-
-            todo.appendChild(todoPara)
-            todo.appendChild(btnCon)
-
-
-            todoCon.appendChild(todo)
-        })
-
-
-
-    </script>
 
 </body>
 
