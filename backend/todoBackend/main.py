@@ -84,6 +84,7 @@ def getTodos():
     """)
     
     res = cursor.fetchall()
+    print(res)
     return res
 
 
