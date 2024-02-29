@@ -1,1 +1,1 @@
-apple
+p1 = Person("John")

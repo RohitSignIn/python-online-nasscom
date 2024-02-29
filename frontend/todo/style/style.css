@@ -1,3 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --mainColor: "#59D5E0";
+}
+
 h1 {
-  color: red;
+  color: var(--mainColor);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#addTodo {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0rem 2rem;
+}
+
+#addTodo > div:nth-child(1) {
+  flex: 2;
+}
+
+#addTodo > div > input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.5rem;
+  outline: none;
+  border: 1px solid #c1bfbf;
+  border-radius: 6px;
+}
+
+#addTodo > div > button {
+  padding: 0.6rem 0.6rem;
+  font-size: 1.2rem;
+  background: "#59D5E0";
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 350ms ease-in-out;
+  cursor: pointer;
+}
+
+#addTodo > div > button:hover {
+  background: #43cad6;
 }
