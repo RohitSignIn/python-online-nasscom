@@ -8,7 +8,7 @@
 }
 
 :root {
-  --mainColor: "#59D5E0";
+  --mainColor: #59d5e0;
 }
 
 h1 {
@@ -40,12 +40,51 @@ h1 {
 #addTodo > div > button {
   padding: 0.6rem 0.6rem;
   font-size: 1.2rem;
-  background: "#59D5E0";
+  background: var(--mainColor);
   border: none;
   border-radius: 6px;
   color: #fff;
   transition: background 350ms ease-in-out;
   cursor: pointer;
+}
+
+#addTodo > div > button:hover {
+  background: #43cad6;
+}
+
+#todoCon {
+  margin: 2rem;
+}
+
+.todo {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.todo > div:nth-child(1) {
+  flex: 1;
+}
+
+.todo button {
+  padding: 0.6rem 0.6rem;
+  font-size: 1rem;
+  background: var(--mainColor);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 350ms ease-in-out;
+  cursor: pointer;
+}
+
+.btnPend {
+  background-color: greenyellow !important;
+}
+
+.btnDel {
+  background-color: tomato !important;
 }
 
 #addTodo > div > button:hover {
