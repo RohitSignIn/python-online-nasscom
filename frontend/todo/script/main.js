@@ -3,6 +3,10 @@ const addTodo = document.getElementById("addTodoBtn");
 
 const todoCon = document.getElementById("todoCon");
 
+function handleDelete(e) {
+  e.target.parentElement.parentElement.remove();
+}
+
 addTodo.addEventListener("click", function () {
   const task = todoInput.value;
 
@@ -11,11 +15,11 @@ addTodo.addEventListener("click", function () {
 
   const statusBtn = document.createElement("button");
   statusBtn.textContent = "PENDING";
-  statusBtn.classList.add("btnPend");
+  statusBtn.classList.add("btnDel");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "DELETE";
-  statusBtn.classList.add("btnDel");
+  deleteBtn.classList.add("btnPend");
 
   paraCon = document.createElement("div");
   statusCon = document.createElement("div");
@@ -33,15 +37,8 @@ addTodo.addEventListener("click", function () {
 
   todoCon.append(taskCon);
 
-  // <div class='todo'>
-  //   <div>
-  //     <p>Task ...</p>
-  //   </div>
-  //   <div>
-  //     <button class='btnPend'>PENDING</button>
-  //   </div>
-  //   <div>
-  //     <button class='btnDel'>DELETE</button>
-  //   </div>
-  // </div>;
+  todoInput.value = "";
+
+  // Event Listeners
+  deleteCon.addEventListener("click", (e) => handleDelete(e));
 });
